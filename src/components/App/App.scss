@@ -33,6 +33,29 @@ body {
       padding: 30px;
       border-radius: 30px;
 
+      .phone-container {
+        max-width: 200px;
+        width: 100%;
+        margin: 0 auto;
+
+        .phone-image {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .selected-rate-container {
+        color: $orange;
+        background-color: $mediumGrey;
+        padding: 12px 8px 10px;
+        border-radius: 30px;
+        text-align: center;
+        max-width: 200px;
+        width: 100%;
+        margin: 20px auto;
+      }
+
+      // RatingCard Component
       .star-container {
         width: 50px;
         height: 50px;
@@ -45,12 +68,22 @@ body {
 
       .title {
         text-align: center;
+
+        &.summary {
+          text-align: center;
+        }
       }
 
       .description {
         color: $lightGrey;
         margin: 20px 0;
         text-align: center;
+
+        &.summary {
+          text-align: center;
+          // Change margin-bottom!!!
+          margin-bottom: 0;
+        }
       }
 
       .rate-buttons-container {
@@ -65,7 +98,7 @@ body {
           height: 45px;
           padding: 12px;
           border-radius: 100%;
-          background-color: hsla(216deg, 12%, 54%, 0.205);
+          background-color: $mediumGrey;
           color: $lightGrey;
           border: none;
           font-family: 'Overpass', sans-serif;
