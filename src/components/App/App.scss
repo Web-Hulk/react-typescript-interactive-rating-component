@@ -27,6 +27,7 @@ body {
 
     .container {
       background-color: $darkBlue;
+      min-height: 400px;
       width: 90%;
       max-width: 375px;
       margin: 30px auto;
@@ -115,6 +116,11 @@ body {
             background-color: $lightGrey;
             color: $white;
           }
+
+          &.active {
+            color: $white;
+            background-color: $orange;
+          }
         }
       }
 
@@ -130,6 +136,11 @@ body {
         font-family: 'Overpass', sans-serif;
         font-weight: 700;
         cursor: pointer;
+
+        &:hover {
+          color: $orange;
+          background-color: $white;
+        }
       }
     }
   }

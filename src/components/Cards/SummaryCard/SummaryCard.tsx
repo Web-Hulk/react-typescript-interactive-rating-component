@@ -1,6 +1,10 @@
 import illustrationThankYou from "../../../assets/illustration-thank-you.svg";
 
-export const SummaryCard = () => {
+type SummaryCardType = {
+  ratingValue: number;
+};
+
+export const SummaryCard = ({ ratingValue }: SummaryCardType) => {
   return (
     <>
       <div className="phone-container">
@@ -11,7 +15,9 @@ export const SummaryCard = () => {
         />
       </div>
 
-      <div className="selected-rate-container">You selected 4 out 5</div>
+      <div className="selected-rate-container">
+        You selected {ratingValue} out 5
+      </div>
 
       <h1 className="title summary">Thank you!</h1>
 

@@ -1,6 +1,34 @@
 import iconStar from "../../../assets/icon-star.svg";
 
-export const RatingCard = () => {
+type RatingCardType = {
+  ratingValue: number;
+  handleButton: (value: number) => void;
+  handleSubmit: () => void;
+};
+
+const RATING_BUTTONS = [
+  {
+    value: 1,
+  },
+  {
+    value: 2,
+  },
+  {
+    value: 3,
+  },
+  {
+    value: 4,
+  },
+  {
+    value: 5,
+  },
+];
+
+export const RatingCard = ({
+  ratingValue,
+  handleButton,
+  handleSubmit,
+}: RatingCardType) => {
   return (
     <>
       <div className="star-container">
@@ -15,14 +43,19 @@ export const RatingCard = () => {
       </p>
 
       <div className="rate-buttons-container">
-        <button className="rate-btn">1</button>
-        <button className="rate-btn">2</button>
-        <button className="rate-btn">3</button>
-        <button className="rate-btn">4</button>
-        <button className="rate-btn">5</button>
+        {RATING_BUTTONS.map(({ value }) => (
+          <button
+            onClick={() => handleButton(value)}
+            className={`rate-btn ${ratingValue === value && "active"}`}
+          >
+            {value}
+          </button>
+        ))}
       </div>
 
-      <button className="submit-btn">Submit</button>
+      <button onClick={handleSubmit} className="submit-btn">
+        Submit
+      </button>
     </>
   );
 };
